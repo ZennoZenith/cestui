@@ -1,0 +1,39 @@
+[package]
+name = "cestui"
+version = "0.0.0"
+authors = ["Zenno Zenith <zennozenith@gmail.com>"]
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "cestui"
+
+[dependencies]
+clap = { version = "4.5.16", features = ["derive", "color", "suggestions"] }
+
+## TUI
+ratatui = { version = "0.28.0", features = ["serde"] }
+
+## Reqwest
+reqwest = { version = "0.12.7", default-features = false, features = [
+  "cookies",
+  "rustls-tls-native-roots",
+  "multipart",
+  "gzip",
+  "brotli",
+  "deflate",
+  "stream",
+] }
+
+# Utils
+serde = { version = "1.0", features = ["derive"] }
+serde-aux = "4.5"
+serde_json = "1"
+config = "0.14"
+toml = "0.8.19"
+thiserror = "1.0.63"
+anyhow = "1.0.86"
+tracing = "0.1.40"
